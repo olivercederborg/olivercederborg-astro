@@ -1,0 +1,12 @@
+---
+import ProjectCard from '../components/ProjectCard.svelte'
+
+const projects = Astro.fetchContent('/src/pages/project/**/*.md')
+---
+
+<section
+	id="projects"
+	class="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 border-t-2 border-b-2 border-stone-800 divide-x-2 divide-stone-800 scroll-p-28"
+>
+	{projects.map(project => <ProjectCard project={project} />)}
+</section>
