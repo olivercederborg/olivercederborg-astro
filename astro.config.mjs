@@ -9,5 +9,5 @@
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
 	// Enable the Svelte renderer to support Svelte components.
-	renderers: ['@astrojs/renderer-svelte'],
-});
+	renderers: ['@astrojs/renderer-svelte']
+})
