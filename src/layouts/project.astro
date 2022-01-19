@@ -1,5 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro'
+import Nav from '../components/Nav.svelte'
 
 const { content } = Astro.props
 ---
@@ -8,7 +9,25 @@ const { content } = Astro.props
 	<head>
 		<MainHead title={content.title} description={content.description} />
 	</head>
-	<body>
-		<slot />
+	<body class="bg-primary-dark font-syne text-white">
+		<style global>
+			h1 {
+				@apply text-4xl font-extrabold;
+			}
+			h2 {
+				@apply text-3xl;
+			}
+		</style>
+
+		<header class="bg-[#17191b]">
+			<Nav />
+			<section class="container py-40">
+				<h1 class="text-6xl">{content.title}</h1>
+				<p class="mt-8">{content.description}</p>
+			</section>
+		</header>
+		<main class="container mt-10">
+			<slot />
+		</main>
 	</body>
 </html>
