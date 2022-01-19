@@ -2,9 +2,10 @@
 layout: ../../layouts/project.astro
 title: Miinto
 client: Self
-publishDate: 2020-03-02 00:00:00
+publishDate: 2022-01-01 00:00:00
 img: https://images.unsplash.com/photo-1547234935-80c7145ec969?fit=crop&w=1400&h=700&q=75
 thumbnail: https://cdn.dribbble.com/users/1858541/screenshots/15234356/media/43ec192370821e577b4b271bdb4ffcb8.png
+thumbnailAlt: Miinto application
 description: Miinto description goes here.
 tags:
     - design
