@@ -1,20 +1,44 @@
 ---
 // Component Imports
-import MainHead from '../components/MainHead.astro';
-import Button from '../components/Button.svelte';
-import Footer from '../components/Footer.svelte';
+import MainHead from '../components/MainHead.astro'
+import Nav from '../components/Nav.svelte'
 
 // Data Fetching: List all Markdown posts in the repo.
-const projects = Astro.fetchContent('./project/**/*.md');
-const featuredProject = projects[0];
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const projects = Astro.fetchContent('./project/**/*.md')
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth scroll-p-28">
 	<head>
-		<MainHead title="Jeanine White: Personal Site" description="Jeanine White: Developer, Speaker, and Writer..." />
+		<MainHead />
 	</head>
-	<body><h1>Hello there</h1></body>
+	<body class="bg-primary-dark text-white font-syne">
+		<Nav />
+
+		<header class="container flex flex-col justify-center py-64 px-4">
+			<article>
+				<h1>
+					<div class="text-primary-brand font-semibold text-4xl uppercase">Hi, I'm Oliver {' '}</div><div
+						class="uppercase md:text-5xl lg:text-6xl font-extrabold mt-6 text-4xl break-words"
+					>
+						I design and develop applications.
+					</div>
+				</h1>
+				<p class="text-3xl text-stone-400 mt-10">
+					I'm a full-time front-end developer with a passion for great design.
+				</p>
+			</article>
+			<a
+				href="#projects"
+				class="uppercase hover:translate-x-4 transition-transform duration-150 font-semibold text-4xl mt-32"
+				>See my projects <span class="ml-6">&rarr;</span></a
+			>
+		</header>
+
+		<section
+			id="projects"
+			class="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 border-t-2 border-b-2 border-stone-800 divide-x-2 divide-stone-800 scroll-p-28 min-h-screen"
+		>
+			{projects.map(project => <img src={project.thumbnail} alt='' />)}
+		</section>
+	</body>
 </html>

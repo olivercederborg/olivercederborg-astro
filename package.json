@@ -1,7 +1,8 @@
 {
-	"name": "@example/portfolio-svelte",
+	"name": "olivercederborg",
 	"version": "0.0.1",
 	"private": true,
+	"format": "yarn prettier -w .",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -11,6 +12,7 @@
 	"devDependencies": {
 		"@astrojs/renderer-svelte": "^0.3.1",
 		"astro": "^0.22.14",
+		"prettier-plugin-astro": "^0.0.11",
 		"tailwindcss": "^3.0.15"
 	}
 }

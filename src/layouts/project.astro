@@ -1,15 +1,14 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Button from '../components/Button.svelte';
-import Footer from '../components/Footer.svelte';
-import Nav from '../components/Nav.svelte';
+import MainHead from '../components/MainHead.astro'
 
-const { content } = Astro.props;
+const { content } = Astro.props
 ---
 
 <html lang={content.lang || 'en'}>
 	<head>
 		<MainHead title={content.title} description={content.description} />
 	</head>
-	<body></body>
+	<body>
+		<slot />
+	</body>
 </html>
