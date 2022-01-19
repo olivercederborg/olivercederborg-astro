@@ -1,10 +1,7 @@
 ---
-// Component Imports
 import MainHead from '../components/MainHead.astro'
 import Nav from '../components/Nav.svelte'
-
-// Data Fetching: List all Markdown posts in the repo.
-const projects = Astro.fetchContent('./project/**/*.md')
+import Projects from '../components/Projects.astro'
 ---
 
 <html lang="en" class="scroll-smooth scroll-p-28">
@@ -34,11 +31,6 @@ const projects = Astro.fetchContent('./project/**/*.md')
 			>
 		</header>
 
-		<section
-			id="projects"
-			class="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 border-t-2 border-b-2 border-stone-800 divide-x-2 divide-stone-800 scroll-p-28 min-h-screen"
-		>
-			{projects.map(project => <img src={project.thumbnail} alt='' />)}
-		</section>
+		<Projects />
 	</body>
 </html>
