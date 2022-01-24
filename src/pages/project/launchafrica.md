@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/project.astro
-title: LaunchAfrica
+title: Launch Africa
 client: LaunchAfrica
 publishDate: 2021-04-10 00:00:00
 img: https://cdn.dribbble.com/users/1858541/screenshots/15378087/media/8a0513cc518ef119db244046388a42c1.png
