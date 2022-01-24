@@ -12,21 +12,51 @@ const { content } = Astro.props
 	<body class="bg-primary-dark font-syne text-white">
 		<style global>
 			h1 {
-				@apply text-4xl font-extrabold;
+				@apply text-4xl font-extrabold uppercase;
 			}
 			h2 {
 				@apply text-3xl;
+			}
+			p {
+				@apply text-lg;
 			}
 		</style>
 
 		<header class="bg-[#17191b]">
 			<Nav />
-			<section class="container py-40">
-				<h1 class="text-6xl">{content.title}</h1>
-				<p class="mt-8">{content.description}</p>
+
+			<section class="container pt-32 flex flex-col-reverse lg:flex-row justify-between items-center break-words xl:break-normal px-4">
+				<article class="z-20 flex flex-col justify-center py-24">
+					<ol class="flex gap-x-3 items-center justify-self-end">
+						{content.tags.map((tag, i) => (
+							<>
+								<li class="font-semibold uppercase text-primary-brand">
+									{tag}
+								</li>
+								{i < content.tags.length - 1 && <span class="text-primary-brand/50">&bull;</span>}
+							</>
+						))}
+					</ol>
+					<h1 class="text-6xl mt-10 uppercase leading-tight">{content.title}</h1>
+					<p class="mt-12 text-xl">{content.description}</p>
+					<a
+						href="#projects"
+						class="uppercase hover:translate-x-4 transition-transform duration-150 font-semibold text-3xl mt-16 ease-in-out"
+						>Visit the site <span class="ml-6">&rarr;</span></a
+					>
+				</article>
+
+				<!-- <figure class="lg:w-1/2 w-full">
+					<img
+						src={content.thumbnail}
+						alt={content.title}
+						class="aspect-[4/3] object-cover overflow-hidden w-full h-full"
+					/>
+				</figure> -->
 			</section>
 		</header>
-		<main class="container mt-10">
+
+		<main class="container py-24 px-4">
 			<slot />
 		</main>
 	</body>
