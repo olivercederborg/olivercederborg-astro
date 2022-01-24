@@ -6,11 +6,24 @@
 // helpful tooltips, and warnings if your exported object is invalid.
 // You can disable this by removing "@ts-check" and `@type` comments below.
 import astroRemark from '@astrojs/markdown-remark'
+import path from 'node:path'
 
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
 	// Enable the Svelte renderer to support Svelte components.
 	renderers: ['@astrojs/renderer-svelte'],
+	vite: {
+		resolve: {
+			alias: {
+				'src:': path.resolve('./src'),
+				'component:': path.resolve('./src/components'),
+				'layouts:': path.resolve('./src/layouts')
+			}
+		},
+		define: {
+			'process.env.VITE_BUILD_TIME': JSON.stringify(new Date().toISOString())
+		}
+	},
 	markdownOptions: {
 		render: [
 			astroRemark,
