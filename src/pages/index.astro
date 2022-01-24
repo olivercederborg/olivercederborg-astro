@@ -3,6 +3,8 @@ import MainHead from '../components/MainHead.astro'
 import Nav from '../components/Nav.svelte'
 import Projects from '../components/Projects.svelte'
 import About from '../components/About.astro'
+import { ScrollSpy, ScrollableSection } from '@beyonk/svelte-scrollspy'
+
 const fetchedProjects = Astro.fetchContent('/src/pages/project/**/*.md')
 	.filter(({ publishDate }) => !!publishDate)
 	.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf())
@@ -13,6 +15,7 @@ const fetchedProjects = Astro.fetchContent('/src/pages/project/**/*.md')
 		<MainHead />
 	</head>
 	<body class="bg-primary-dark text-white font-syne">
+		<ScrollSpy client:load>
 		<Nav client:load />
 
 		<header class="container flex flex-col justify-center py-64 px-4">
@@ -35,7 +38,13 @@ const fetchedProjects = Astro.fetchContent('/src/pages/project/**/*.md')
 			>
 		</header>
 
+			<ScrollableSection client:load id="projects">
 				<Projects projects={fetchedProjects} />
+			</ScrollableSection>
+
+			<ScrollableSection client:load id="about">
 				<About />
+			</ScrollableSection>
+		</ScrollSpy>
 	</body>
 </html>
