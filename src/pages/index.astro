@@ -1,6 +1,7 @@
 ---
 import MainHead from '../components/MainHead.astro'
 import Nav from '../components/Nav.svelte'
+import Hero from '../components/Hero.astro'
 import Projects from '../components/Projects.svelte'
 import About from '../components/About.astro'
 import { ScrollSpy, ScrollableSection } from '@beyonk/svelte-scrollspy'
@@ -18,25 +19,7 @@ const fetchedProjects = Astro.fetchContent('/src/pages/project/**/*.md')
 		<ScrollSpy client:load>
 			<Nav client:load />
 
-		<header class="container flex flex-col justify-center py-64 px-4">
-			<article>
-				<h1>
-					<div class="text-primary-brand font-semibold text-4xl uppercase">Hi, I'm Oliver {' '}</div><div
-						class="uppercase md:text-5xl lg:text-6xl font-extrabold mt-6 text-4xl break-words"
-					>
-						I design and develop applications.
-					</div>
-				</h1>
-				<p class="text-3xl text-stone-400 mt-10">
-					I'm a full-time front-end developer with a passion for great design.
-				</p>
-			</article>
-			<a
-				href="#projects"
-				class="uppercase hover:translate-x-4 transition-transform duration-150 font-semibold text-4xl mt-32 ease-in-out"
-				>See my projects <span class="ml-6">&rarr;</span></a
-			>
-		</header>
+			<Hero />
 
 			<ScrollableSection client:load id="projects">
 				<Projects projects={fetchedProjects} />
