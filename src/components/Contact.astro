@@ -1,0 +1,23 @@
+---
+import ContactForm from './ContactForm.svelte'
+---
+
+<section id="contact" class="px-4 lg:py-32 py-16 bg-primary-darker">
+	<article class="container">
+		<p class="text-primary-brand text-xl font-semibold uppercase">Contact</p>
+		<h2 class="uppercase md:text-4xl lg:text-5xl font-extrabold mt-6 text-3xl break-words !leading-[1.25]">
+			Get in touch
+		</h2>
+	</article>
+
+	<div class="container flex gap-16">
+		<section class="w-1/2">
+			<p class="text-2xl text-stone-400 mt-10">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint velit dolorem magni veritatis recusandae.
+			</p>
+		</section>
+		<section class="w-1/2">
+			<ContactForm client:visible />
+		</section>
+	</div>
+</section>
