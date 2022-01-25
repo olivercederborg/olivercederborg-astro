@@ -5,9 +5,9 @@
 
 <section class="pt-32 mb-32 bg-primary-darker">
 	<article class="container">
-		<p class="text-primary-brand font-semibold text-xl uppercase">Recent Work</p>
+		<p class="text-primary-brand font-semibold text-xl uppercase">Projects</p>
 		<h2 class="uppercase md:text-4xl lg:text-5xl font-extrabold mt-6 text-3xl break-words !leading-[1.25]">
-			Projects
+			Recent work
 		</h2>
 		<p class="text-2xl text-stone-400 mt-10">
 			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint velit dolorem magni veritatis recusandae
