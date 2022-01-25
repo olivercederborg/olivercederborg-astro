@@ -30,7 +30,7 @@ const fetchedProjects = Astro.fetchContent('/src/pages/project/**/*.md')
 				<About />
 			</ScrollableSection>
 
-			<Contact />
+			<Contact client:load />
 		</ScrollSpy>
 	</body>
 </html>
