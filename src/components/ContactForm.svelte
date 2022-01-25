@@ -14,7 +14,18 @@
 			message: yup.string().required()
 		}),
 		onSubmit: values => {
-			alert(JSON.stringify(values, null, 2))
+			fetch('/api/send', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(values)
+			})
+				.then(res => res.json())
+				.then(data => {
+					console.log(data)
+				})
+				.catch(err => console.log(err))
 		}
 	})
 </script>
