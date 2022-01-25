@@ -35,4 +35,5 @@
 			{/each}
 		</ul>
 	</section>
+	<slot />
 </nav>
