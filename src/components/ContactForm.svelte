@@ -14,6 +14,7 @@
 			message: yup.string().required()
 		}),
 		onSubmit: values => {
+			alert(JSON.stringify(values, null, 2))
 			fetch('/api/send', {
 				method: 'POST',
 				headers: {
@@ -22,9 +23,6 @@
 				body: JSON.stringify(values)
 			})
 				.then(res => res.json())
-				.then(data => {
-					console.log(data)
-				})
 				.catch(err => console.log(err))
 		}
 	})
@@ -92,12 +90,13 @@
 		disabled="{!$isValid || !$isModified}"
 		class="text-2xl uppercase font-semibold hover:text-primary-brand disabled:text-white/40"
 	>
-		{#if $isSubmitting}
-			Submitting...
-		{:else if $isValid && $isModified}
+		{#if $isValid && $isModified}
 			Send it <span class="ml-2">&rarr;</span>
+		{:else if $isSubmitting}
+			Submitting...
 		{:else}
 			Fill the form!
 		{/if}
 	</button>
+	<slot />
 </form>
